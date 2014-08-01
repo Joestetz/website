@@ -22,6 +22,29 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     }
 }
 
+/* Custom variables and styles */
+$font-family-header1: 'Open Sans Condensed', sans-serif;
+$font-family-header2: 'Lobster', cursive;
+$font-family-standard: 'Lato', sans-serif;
+
+body {
+	font-family: $font-family-standard;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $font-family-header1;
+	
+	&.fancy {
+		font-family: $font-family-header2;
+	}
+	
+	&.normal {
+		font-family: $font-family-standard;
+	}
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'about/about.scss';
