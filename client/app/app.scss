@@ -23,9 +23,9 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 }
 
 /* Custom variables and styles */
-$font-family-header1: 'Open Sans Condensed', sans-serif;
-$font-family-header2: 'Lobster', cursive;
-$font-family-standard: 'Lato', sans-serif;
+$font-family-standard: 'Open Sans Condensed', sans-serif;
+$font-family-fancy: 'Lobster', cursive;
+$font-family-navigation: 'Lato', sans-serif;
 
 $color-blue: #4393B9;
 
@@ -35,20 +35,31 @@ html {
 
 body {
 	font-family: $font-family-standard;
-	font-size: 16px;
+	font-size: 20px;
+	
+	.navbar {
+		font-family: $font-family-navigation;
+		font-size: 16px;
+	}
 }
 
 h1, h2, h3, h4, h5, h6, 
 .h1, .h2, .h3, .h4, .h5, .h6 {
-	font-family: $font-family-header1;
+	font-family: $font-family-standard;
 	
 	&.fancy {
-		font-family: $font-family-header2;
+		font-family: $font-family-fancy;
 	}
-	
-	&.normal {
-		font-family: $font-family-standard;
-	}
+}
+
+::selection {
+	color: #FFF;
+	background-color: $color-blue;
+}
+
+::-moz-selection {
+	color: #FFF;
+	background-color: $color-blue;
 }
 
 // Component styles are injected through grunt
