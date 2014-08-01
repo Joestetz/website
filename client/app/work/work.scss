@@ -17,4 +17,10 @@
 	ul {
 		list-style-type: square;
 	}
+	
+	@media screen and (min-width: 992px) {
+		.h-line {
+			border-right: 1px dashed $color-blue;
+		}
+	}
 }
