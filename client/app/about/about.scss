@@ -1,0 +1,14 @@
+#about {
+	h2, .h2 {
+		border-bottom: 2px solid $color-blue;
+	}
+	
+	.container {
+		box-shadow: 5px 4px 0px 2px $color-blue;
+		border: 1px solid #BBB;
+	}
+	
+	ul {
+		list-style-type: square;
+	}
+}
