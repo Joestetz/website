@@ -29,6 +29,10 @@ $font-family-standard: 'Lato', sans-serif;
 
 $color-blue: #4393B9;
 
+html {
+	overflow-y: scroll;
+}
+
 body {
 	font-family: $font-family-standard;
 	font-size: 16px;
