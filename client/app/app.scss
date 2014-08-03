@@ -81,6 +81,10 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
+.form-control {
+  font-size: inherit;
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'about/about.scss';
