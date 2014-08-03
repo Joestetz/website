@@ -7,13 +7,6 @@
 		margin-bottom: 5px;
 	}
 	
-	.container {
-		box-shadow: 5px 4px 0px 2px $color-blue;
-		border: 1px solid #BBB;
-		padding-bottom: 15px;
-		margin-bottom: 40px;
-	}
-	
 	ul {
 		list-style-type: square;
 	}
@@ -26,8 +19,12 @@
   }
 	
 	@media screen and (min-width: 992px) {
-		.h-line {
+		.h-line-r {
 			border-right: 1px dashed $color-blue;
+		}
+    
+    .h-line-l {
+			border-left: 1px dashed $color-blue;
 		}
 	}
 }
