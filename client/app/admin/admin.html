@@ -13,7 +13,7 @@
           </li>
         </ul>
       </js-tab>
-      <js-tab title="Messages">
+      <js-tab title="Messages" additional-content="unreadCount">
         <ul class="list-group">
           <li class="list-group-item message-item" ng-repeat="message in messages" ng-click="openMessage(message)" ng-class="{ read: message.isRead }">
             <strong>{{message.name}}</strong> - 

@@ -34,7 +34,8 @@ angular.module('websiteApp')
       restrict: 'E',
       transclude: true,
       scope: {
-        title: '@'
+        title: '@',
+        additionalContent: '='
       },
       link: function (scope, element, attrs, ctrl) {
         ctrl.addTab(scope);

@@ -2,9 +2,20 @@
 
 angular.module('websiteApp')
   .controller('AdminCtrl', function ($scope, $http, Auth, User, Message, $modal) {
-  
+    
+    // init some scope variables and set up a watch
+    $scope.messages = [];
+    $scope.unreadCount = 0;
+    $scope.$watch('messages', function() {
+      var filtered = jQuery.grep($scope.messages, function(m) {
+        return !m.isRead;
+      });
+      $scope.unreadCount = filtered.length;
+    }, true);
+    
     $scope.isAuthorized = Auth.getCurrentUser().role != 'admin';
   
+    // fetch data
     $http.get('/api/users').success(function(users) {
       $scope.users = users;
     });
@@ -13,6 +24,7 @@ angular.module('websiteApp')
       $scope.messages = messages;
     });
 
+    // user tab functions
     $scope.deleteUser = function(user) {
       User.remove({ id: user._id });
       angular.forEach($scope.users, function(u, i) {
@@ -22,6 +34,8 @@ angular.module('websiteApp')
       });
     };
     
+    
+    // message tab functions
     $scope.deleteMessage = function(message) {
       Message.remove({ id: message._id });
       angular.forEach($scope.messages, function(m, i) {
