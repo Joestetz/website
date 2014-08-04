@@ -3,12 +3,8 @@
 <div id="admin">
   <div class="container">
     <p ng-show="isAuthorized">Sorry! This page is only for users with the 'admin' role.</p>
-    <ul class="nav nav-tabs" role="tablist">
-      <li class="active"><a href="#" ng-click="toggleTab()">Users</a></li>
-      <li><a href="#" ng-click="toggleTab()">Messages</a></li>
-    </ul>
-    <div class="admin-tabs">
-      <div class="tab-users">
+    <js-tabs>
+      <js-tab title="Users">
         <ul class="list-group">
           <li class="list-group-item" ng-repeat="user in users">
               <strong>{{user.name}}</strong><br>
@@ -16,7 +12,8 @@
               <a ng-click="delete(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
           </li>
         </ul>
-      </div>
-    </div>
+      </js-tab>
+      <js-tab title="Messages">messages</js-tab>
+    </js-tabs>
   </div>
 </div>
