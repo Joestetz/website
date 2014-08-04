@@ -1,5 +1,20 @@
 #admin {
-  .trash {
+  .action-icon {
     color: $color-orange;
+    cursor: pointer;
+    
+    span {
+      padding-left: 5px;
+    }
+  }
+  
+  .read {
+    background-color: $color-lightgray;
+  }
+  
+  .message-item {
+    &:hover {
+      background-color: $color-medgray;
+    }
   }
 }
