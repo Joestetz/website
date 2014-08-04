@@ -28,6 +28,7 @@ $font-family-fancy: 'Lobster', cursive;
 $font-family-crisp: 'Lato', sans-serif;
 
 $color-blue: #4393B9;
+$color-orange: #B96943;
 
 html {
 	overflow-y: scroll;
@@ -59,12 +60,12 @@ h1, h2, h3, h4, h5, h6,
 
 ::selection {
 	color: #FFF;
-	background-color: #B96943;
+	background-color: $color-orange;
 }
 
 ::-moz-selection {
 	color: #FFF;
-	background-color: #B96943;
+	background-color: $color-orange;
 }
 
 .raised {

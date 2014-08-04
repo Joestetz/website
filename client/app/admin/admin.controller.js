@@ -2,7 +2,9 @@
 
 angular.module('websiteApp')
   .controller('AdminCtrl', function ($scope, $http, Auth, User) {
-
+  
+    $scope.isAuthorized = Auth.getCurrentUser().role != 'admin';
+  
     $http.get('/api/users').success(function(users) {
       $scope.users = users;
     });
