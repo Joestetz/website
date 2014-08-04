@@ -3,6 +3,10 @@
     color: $color-orange;
     cursor: pointer;
     
+    &:hover {
+      color: $color-blue;
+    }
+    
     span {
       padding-left: 5px;
     }
@@ -13,6 +17,8 @@
   }
   
   .message-item {
+    cursor: pointer;
+  
     &:hover {
       background-color: $color-medgray;
     }

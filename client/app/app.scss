@@ -45,7 +45,7 @@ body {
 		font-size: 16px;
 	}
   
-  .btn:hover {
+  .btn-default:hover {
     color: #FFF;
     background-color: $color-blue;
   }
@@ -97,4 +97,5 @@ h1, h2, h3, h4, h5, h6,
 @import 'directives/jsTabs/jsTabs.scss';
 @import 'main/main.scss';
 @import 'work/work.scss';
+@import 'navbar/navbar.scss';
 // endinjector

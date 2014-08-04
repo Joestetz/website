@@ -34,15 +34,15 @@
   
   <script type="text/ng-template" id="messageModal.html">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <button type="button" class="close" ng-click="close()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
       <h4 class="modal-title" id="messageModalLabel">Message from {{currentMessage.name}} ({{currentMessage.email}})</h4>
     </div>
     <div class="modal-body">
       {{currentMessage.message}}
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-default" ng-click="close()">Close</button>
-      <button type="button" class="btn btn-primary" ng-click="markUnread(currentMessage)">Mark Unread</button>
+      <button type="button" class="btn btn-default" ng-click="markUnread(currentMessage)">Mark Unread</button>
+      <button type="button" class="btn btn-primary" ng-click="close()">Close</button>
     </div>
   </script>
 </div>
