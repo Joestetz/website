@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('websiteApp')
-  .controller('AdminCtrl', function ($scope, $http, Auth, User, Message, $modal) {
+  .controller('AdminCtrl', function ($scope, $http, Auth, User, Message, $modal, socket) {
     
     // init some scope variables and set up a watch
     $scope.messages = [];
@@ -22,6 +22,7 @@ angular.module('websiteApp')
     
     $http.get('/api/messages').success(function(messages) {
       $scope.messages = messages;
+      socket.syncUpdates('message', $scope.messages);
     });
 
     // user tab functions
@@ -36,7 +37,6 @@ angular.module('websiteApp')
         }
       });
     };
-    
     
     // message tab functions
     $scope.deleteMessage = function(message) {
@@ -74,6 +74,10 @@ angular.module('websiteApp')
         }
       });
     };
+    
+    $scope.$on('$destroy', function () {
+      socket.unsyncUpdates('messages');
+    });
   })
   .controller('MessageModalCtrl', function ($scope, $modalInstance, Message, currentMessage) {
     $scope.currentMessage = currentMessage;
