@@ -26,6 +26,9 @@ angular.module('websiteApp')
 
     // user tab functions
     $scope.deleteUser = function(user) {
+      var conf = confirm('Are you sure you want to delete this user?');
+      if(!conf) return;
+      
       User.remove({ id: user._id });
       angular.forEach($scope.users, function(u, i) {
         if (u === user) {
@@ -37,6 +40,9 @@ angular.module('websiteApp')
     
     // message tab functions
     $scope.deleteMessage = function(message) {
+      var conf = confirm('Are you sure you want to delete this message?');
+      if(!conf) return;
+      
       Message.remove({ id: message._id });
       angular.forEach($scope.messages, function(m, i) {
         if (m === message) {
