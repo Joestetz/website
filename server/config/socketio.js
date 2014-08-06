@@ -28,6 +28,8 @@ module.exports = function (socketio) {
   // 2 - info
   // 3 - debug
   socketio.set('log level', 2);
+  
+  socketio.set('transports', ['websocket', 'polling ']);
 
   // We can authenticate socket.io users and access their token through socket.handshake.decoded_token
   //
