@@ -13,7 +13,7 @@ angular.module('websiteApp')
       $scope.unreadCount = filtered.length;
     }, true);
     
-    $scope.isAuthorized = Auth.getCurrentUser().role != 'admin';
+    $scope.isAuthorized = Auth.getCurrentUser().role == 'admin';
   
     // fetch data
     $http.get('/api/users').success(function(users) {
