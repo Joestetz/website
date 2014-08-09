@@ -3,7 +3,7 @@
 <div id="admin">
   <div class="container">
     <p ng-hide="isAuthorized">Sorry! This page is only for users with the 'admin' role.</p>
-    <js-tabs>
+    <js-tabs ng-show="isAuthorized">
       <js-tab title="Users">
         <ul class="list-group">
           <li class="list-group-item" ng-repeat="user in users">
