@@ -16,15 +16,86 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
     .container {
-        max-width: 730px;
+        max-width: 954px;
     }
+}
+
+/* Custom variables and styles */
+$font-family-standard: 'Open Sans Condensed', sans-serif;
+$font-family-fancy: 'Lobster', cursive;
+$font-family-crisp: 'Lato', sans-serif;
+
+$color-blue: #4393B9;
+$color-orange: #B96943;
+$color-lightgray: #F8F8F8;
+$color-medgray: #E7E7E7;
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	font-family: $font-family-standard;
+	font-size: 20px;
+	
+	.navbar, .btn {
+		font-family: $font-family-crisp;
+		font-size: 16px;
+	}
+  
+  .btn-default:hover {
+    color: #FFF;
+    background-color: $color-blue;
+  }
+}
+
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $font-family-standard;
+	
+	&.fancy {
+		font-family: $font-family-fancy;
+	}
+}
+
+::selection {
+	color: #FFF;
+	background-color: $color-orange;
+}
+
+::-moz-selection {
+	color: #FFF;
+	background-color: $color-orange;
+}
+
+.raised {
+  box-shadow: 5px 4px 0px 2px $color-blue;
+  border: 1px solid #BBB;
+  padding-bottom: 15px;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.form-control {
+  font-size: inherit;
 }
 
 // Component styles are injected through grunt
 // injector
+@import 'about/about.scss';
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
+@import 'contact/contact.scss';
+@import 'directives/jsTabs/jsTabs.scss';
 @import 'main/main.scss';
+@import 'work/work.scss';
+@import 'navbar/navbar.scss';
 // endinjector

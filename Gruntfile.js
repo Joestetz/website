@@ -9,7 +9,8 @@ module.exports = function (grunt) {
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn',
     protractor: 'grunt-protractor-runner',
-    injector: 'grunt-asset-injector'
+    injector: 'grunt-asset-injector',
+    preprocess: 'grunt-preprocess'
   });
 
   // Time how long tasks take. Can help when optimizing build times
@@ -337,7 +338,8 @@ module.exports = function (grunt) {
             'bower_components/**/*',
             'assets/images/{,*/}*.{webp}',
             'assets/fonts/**/*',
-            'index.html'
+            'index.html',
+            'showcase/**/*'
           ]
         }, {
           expand: true,
@@ -502,6 +504,12 @@ module.exports = function (grunt) {
         }
       }
     },
+    preprocess: {
+      js : {
+        src : 'preprocessed/client/socket.service.preprocessed.js',
+        dest : '<%= yeoman.client %>/components/socket/socket.service.js'
+      }
+    }
   });
 
   // Used for delaying livereload until after server has restarted
@@ -541,6 +549,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'env:all',
+      'preprocess',
       'injector:sass', 
       'concurrent:server',
       'injector',
@@ -602,6 +611,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'env:prod',
+    'preprocess',
     'injector:sass', 
     'concurrent:dist',
     'injector',

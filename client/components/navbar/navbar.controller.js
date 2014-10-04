@@ -5,7 +5,16 @@ angular.module('websiteApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }];
+    }, {
+		'title': 'About',
+		'link': '/about'
+	}, {
+		'title': 'Work',
+		'link': '/work'
+	}, {
+		'title': 'Contact',
+		'link': '/contact'
+	}];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

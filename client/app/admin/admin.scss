@@ -1,1 +1,26 @@
-.trash { color:rgb(209, 91, 71); }
+#admin {
+  .action-icon {
+    color: $color-orange;
+    cursor: pointer;
+    
+    &:hover {
+      color: $color-blue;
+    }
+    
+    span {
+      padding-left: 5px;
+    }
+  }
+  
+  .read {
+    background-color: $color-lightgray;
+  }
+  
+  .message-item {
+    cursor: pointer;
+  
+    &:hover {
+      background-color: $color-medgray;
+    }
+  }
+}
