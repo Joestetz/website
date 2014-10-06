@@ -15,7 +15,10 @@ var config = require('./config/environment');
 mongoose.connect(config.mongo.uri, config.mongo.options);
 
 // Populate DB with sample data
-if(config.seedDB) { require('./config/seed'); }
+if(config.seedDB) { 
+  require('./config/seed'); 
+  require('./showcase/slackbotReminders/config/seed');
+}
 
 // Setup server
 var app = express();
@@ -25,7 +28,7 @@ var socketio = require('socket.io').listen(server);
 require('./config/socketio')(socketio);
 require('./config/express')(app);
 require('./routes')(app);
-require('./handeyQuotes')(app);
+require('./showcase/slackbotReminders/config/scheduler').startup(app);
 
 // Start server
 server.listen(config.port, config.ip, function () {

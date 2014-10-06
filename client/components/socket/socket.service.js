@@ -8,7 +8,7 @@ angular.module('websiteApp')
 
     clearInterval(retryTimer);
 
-    var ioSocket = io.connect('http://website-joestetz.rhcloud.com:8000', {
+    var ioSocket = io.connect('', {
       'force new connection': true,
 
       'max reconnection attempts': Infinity,
