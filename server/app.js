@@ -18,6 +18,7 @@ mongoose.connect(config.mongo.uri, config.mongo.options);
 if(config.seedDB) { 
   require('./config/seed'); 
   require('./showcase/slackbotReminders/config/seed');
+  require('./showcase/slackDeploymentTracker/config/seed');
 }
 
 // Setup server

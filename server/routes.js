@@ -13,6 +13,7 @@ module.exports = function(app) {
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
   app.use('/api/reminders', require('./showcase/slackbotReminders/api/reminder'));
+  app.use('/api/tasks', require('./showcase/slackDeploymentTracker/api/task'));
 
   app.use('/auth', require('./auth'));
   
@@ -30,6 +31,12 @@ module.exports = function(app) {
   app.route('/showcase/slackbotReminders/*')
   .get(function(req, res) {
     res.sendfile(app.get('appPath') + '/showcase/slackbotReminders/index.html');
+  });
+  
+  // route added for xo
+  app.route('/showcase/slackDeploymentTracker/*')
+  .get(function(req, res) {
+    res.sendfile(app.get('appPath') + '/showcase/slackDeploymentTracker/index.html');
   });
 
   // All other routes should redirect to the index.html
