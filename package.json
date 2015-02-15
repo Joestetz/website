@@ -20,8 +20,10 @@
     "mongoose": "~3.8.8",
     "morgan": "~1.0.0",
     "node-schedule": "^0.1.13",
+    "node-slack": "0.0.5",
     "passport": "~0.2.0",
     "passport-local": "~0.1.6",
+    "slack-notify": "^0.1.4",
     "slackbot": "0.0.1",
     "socket.io": "~0.9.16",
     "static-favicon": "~1.0.1"
