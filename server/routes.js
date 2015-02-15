@@ -13,7 +13,7 @@ module.exports = function(app) {
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
   app.use('/api/reminders', require('./showcase/slackbotReminders/api/reminder'));
-  app.use('/api/tasks', require('./showcase/slackDeploymentTracker/api/task'));
+  app.use('/api/showcase/slackCommander/tasks', require('./showcase/slackCommander/api/task'));
 
   app.use('/auth', require('./auth'));
   
@@ -34,9 +34,9 @@ module.exports = function(app) {
   });
   
   // route added for xo
-  app.route('/showcase/slackDeploymentTracker/*')
+  app.route('/showcase/slackCommander/*')
   .get(function(req, res) {
-    res.sendfile(app.get('appPath') + '/showcase/slackDeploymentTracker/index.html');
+    res.sendfile(app.get('appPath') + '/showcase/slackCommander/index.html');
   });
 
   // All other routes should redirect to the index.html
