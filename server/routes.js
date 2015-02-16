@@ -14,6 +14,7 @@ module.exports = function(app) {
   app.use('/api/users', require('./api/user'));
   app.use('/api/reminders', require('./showcase/slackbotReminders/api/reminder'));
   app.use('/api/showcase/slackCommander/tasks', require('./showcase/slackCommander/api/task'));
+  app.use('/api/showcase/slackCommander/timers', require('./showcase/slackCommander/api/timer'));
 
   app.use('/auth', require('./auth'));
   
