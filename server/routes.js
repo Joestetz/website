@@ -15,6 +15,7 @@ module.exports = function(app) {
   app.use('/api/reminders', require('./showcase/slackbotReminders/api/reminder'));
   app.use('/api/showcase/slackCommander/tasks', require('./showcase/slackCommander/api/task'));
   app.use('/api/showcase/slackCommander/timers', require('./showcase/slackCommander/api/timer'));
+  app.use('/api/showcase/slackCommander/beers', require('./showcase/slackCommander/api/beer'));
 
   app.use('/auth', require('./auth'));
   
@@ -28,13 +29,13 @@ module.exports = function(app) {
     res.sendfile(app.get('appPath') + '/showcase/xo/index.html');
   });
   
-  // route added for xo
+  // route added for slackbotReminders
   app.route('/showcase/slackbotReminders/*')
   .get(function(req, res) {
     res.sendfile(app.get('appPath') + '/showcase/slackbotReminders/index.html');
   });
   
-  // route added for xo
+  // route added for slackCommander
   app.route('/showcase/slackCommander/*')
   .get(function(req, res) {
     res.sendfile(app.get('appPath') + '/showcase/slackCommander/index.html');
