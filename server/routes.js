@@ -16,6 +16,7 @@ module.exports = function(app) {
   app.use('/api/showcase/slackCommander/tasks', require('./showcase/slackCommander/api/task'));
   app.use('/api/showcase/slackCommander/timers', require('./showcase/slackCommander/api/timer'));
   app.use('/api/showcase/slackCommander/beers', require('./showcase/slackCommander/api/beer'));
+  app.use('/api/showcase/slackCommander/jira', require('./showcase/slackCommander/api/jira'));
 
   app.use('/auth', require('./auth'));
   

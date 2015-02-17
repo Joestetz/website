@@ -23,6 +23,7 @@
     "node-slack": "0.0.5",
     "passport": "~0.2.0",
     "passport-local": "~0.1.6",
+    "request": "^2.53.0",
     "slack-notify": "^0.1.4",
     "slackbot": "0.0.1",
     "socket.io": "~0.9.16",
